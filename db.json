@@ -1,0 +1,51 @@
+{
+  "movies": [
+    {
+      "title": "Animal",
+      "director": "Sandeep Reddy Vanga",
+      "genre": "Violence",
+      "language": "Telugu",
+      "rating": 5,
+      "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FAnimal_%25282023_film%2529&psig=AOvVaw0odeNwFJ5PSbqj1ToUUy58&ust=1701499664747000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOCC_KrS7YIDFQAAAAAdAAAAABAE",
+      "id": 1
+    }
+  ],
+  "theatres": [
+    {
+      "theatreName": "PVR",
+      "location": "Banglore",
+      "id": 1
+    }
+  ],
+  "screens": [
+    {
+      "screenName": "Screen -1",
+      "capacity": 350,
+      "theatreId": 1,
+      "id": 1
+    }
+  ],
+  "shows": [
+    {
+      "movieTitle": "Animal",
+      "theatreName": "PVR",
+      "screenName": "Screen -1",
+      "showTimes": [
+        "10:45am",
+        "2:20pm",
+        "6:00pm",
+        "9:45pm"
+      ],
+      "id": 1
+    },
+    {
+      "movieTitle": "Animal",
+      "theatreName": "PVR",
+      "screenName": "Screen -1",
+      "showTimes": [
+        "10:45am"
+      ],
+      "id": 2
+    }
+  ]
+}

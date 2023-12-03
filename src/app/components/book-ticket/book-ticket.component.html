@@ -1,0 +1,38 @@
+<!-- book-ticket.component.html -->
+<div>
+    <h2>Book Ticket</h2>
+    <div class="form-group">
+      <label for="showTime">Select Show Time:</label>
+      <select id="showTime" [(ngModel)]="selectedShowTime" name="showTime" class="form-control" required>
+        <option *ngFor="let time of showTimes" [value]="time">{{ time }}</option>
+      </select>
+    </div>
+  
+    <!-- Display all movies and their details in a table -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Movie</th>
+          <th>Theatre</th>
+          <th>Screen</th>
+          <th>Show Times</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let show of shows">
+          <td>{{ show.movieTitle }}</td>
+          <td>{{ show.theatreName }}</td>
+          <td>{{ show.screenName }}</td>
+          <td>{{ show.showTimes.join(', ') }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="form-group">
+      <label for="seat">Select Seat:</label>
+      <input type="text" id="seat" [(ngModel)]="selectedSeat" name="seat" class="form-control" required />
+    </div>
+  
+    <button type="button" class="btn btn-success" (click)="bookTicket()">Book Ticket</button>
+  </div>
+  

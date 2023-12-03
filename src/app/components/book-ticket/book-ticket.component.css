@@ -1,0 +1,6 @@
+/* book-ticket.component.css */
+.selected {
+    background-color: lightblue;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,62 @@
+<!-- shows.component.html -->
+<div>
+    <h2>Movie Shows</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Movie</th>
+          <th>Theatre</th>
+          <th>Screen</th>
+          <th>Show Times</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let show of shows">
+          <td>{{ show.movieTitle }}</td>
+          <td>{{ show.theatreName }}</td>
+          <td>{{ show.screenName }}</td>
+          <td>{{ show.showTimes.join(', ') }}</td>
+          <td>
+            <button *ngIf="show.id !== undefined" (click)="removeShow(show.id)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Add Show Form -->
+    <form class="container col-md-5" (ngSubmit)="addShow()" #showForm="ngForm">
+      <div class="form-group">
+        <h2>Add Movie Show</h2>
+      </div>
+      <div class="form-group">
+        <label for="movie">Select Movie:</label>
+        <select id="movie" [(ngModel)]="selectedMovie" name="movie" class="form-control" required>
+          <option *ngFor="let movie of movies" [ngValue]="movie">{{ movie.title }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="theatre">Select Theatre:</label>
+        <select id="theatre" [(ngModel)]="selectedTheatre" name="theatre" class="form-control" (change)="onTheatreChange()" required>
+          <option *ngFor="let theatre of theatres" [ngValue]="theatre">{{ theatre.theatreName }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="screen">Select Screen:</label>
+        <select id="screen" [(ngModel)]="selectedScreen" name="screen" class="form-control" required>
+          <option *ngFor="let screen of filteredScreens" [ngValue]="screen">{{ screen.screenName }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="showTimes">Select Show Times:</label>
+        <div *ngFor="let time of showTimes">
+          <label class="checkbox-inline">
+            <input type="checkbox" [checked]="isSelectedShowTime(time)" (change)="toggleShowTime(time)" /> {{ time }}
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">Add Movie Show</button>
+    </form>
+  </div>
+  
+  

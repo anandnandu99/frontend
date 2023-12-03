@@ -1,0 +1,23 @@
+<p>movie-dashboard works!</p>
+<!-- movie-dashboard.component.html -->
+<div>
+    <h2>Movie Dashboard</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Movie</th>
+          <th>Theatre</th>
+          <th>Screen</th>
+          <th>Show Times</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of movies">
+          <td>{{ movie.title }}</td>
+          <td>{{ movie.theatreName }}</td>
+          <td>{{ movie.screenName }}</td>
+          <td>{{ movie.showTimes.join(', ') }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
